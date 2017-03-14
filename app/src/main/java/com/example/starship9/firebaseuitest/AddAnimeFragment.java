@@ -54,7 +54,7 @@ public class AddAnimeFragment extends Fragment implements View.OnClickListener{
         switch (v.getId()){
             case R.id.submitButton:
                 if(!animeName.equals(null) && !animeLogo.equals(null)){
-                    myNewMovie("53", animeName.getText().toString().trim(), animeLogo.getText().toString().trim(),ratingBar.getRating());
+                    newAnime("53", animeName.getText().toString().trim(), animeLogo.getText().toString().trim(),ratingBar.getRating());
                 }else{
                     if(animeName.equals(null)){
                         Toast.makeText(getContext(), "Please enter an anime name", Toast.LENGTH_SHORT).show();
@@ -68,7 +68,7 @@ public class AddAnimeFragment extends Fragment implements View.OnClickListener{
         }
     }
 
-    private void myNewMovie(String userId, String animeName, String animePoster, float rating) {
+    private void newAnime(String userId, String animeName, String animePoster, float rating) {
         //Creating a anime object with user defined variables
         Anime anime = new Anime(animeName,animePoster,rating);
         //referring to movies node and setting the values from anime object to that location
